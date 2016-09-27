@@ -1,0 +1,3 @@
+gestion_stock_homepage:
+    path:     /
+    defaults: { _controller: GestionStockBundle:Default:index }
