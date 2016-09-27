@@ -3,7 +3,7 @@
 namespace Gestion\StockBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Gestion\EntiteBundle\Entity\Produit;
+use Gestion\StockBundle\Entity\Produit;
 use Gestion\StockBundle\Form\ProduitType as ProduitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -47,7 +47,7 @@ class ProduitController extends Controller
     public function afficherAction($code)
     {
         $em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('GestionEntiteBundle:Produit')->findOneBy( array('codebarre' => $code));
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findOneBy( array('codebarre' => $code));
         return $this->render('GestionStockBundle:Produit:afficher.html.twig', array("code"  => $produit ));
     }
 
@@ -55,7 +55,7 @@ class ProduitController extends Controller
     public function listerAction()
     {
     	$em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('GestionEntiteBundle:Produit')->findAll();
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findAll();
         return $this->render('GestionStockBundle:Produit:lister.html.twig', array('produits' => $produit));
     }
      
@@ -63,8 +63,8 @@ class ProduitController extends Controller
     public function modifierAction(Request $request, $codebarre)
     {
         $em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('GestionEntiteBundle:Produit')->findOneBy(array('codebarre' => $codebarre));
-        $produits = $em->getRepository('GestionEntiteBundle:Produit')->findAll();
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findOneBy(array('codebarre' => $codebarre));
+        $produits = $em->getRepository('GestionStockBundle:Produit')->findAll();
 
          // On vérifie que le produit avc un $codebarre existe bien, sinon, erreur 404.
         if(!$produit)
@@ -102,8 +102,8 @@ class ProduitController extends Controller
     public function supprimerAction(Request $request, $codebarre)
     {
         $em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('GestionEntiteBundle:Produit')->findOneBy(array('codebarre' => $codebarre));
-        $produits = $em->getRepository('GestionEntiteBundle:Produit')->findAll();
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findOneBy(array('codebarre' => $codebarre));
+        $produits = $em->getRepository('GestionStockBundle:Produit')->findAll();
 
          // On vérifie que le produit avc un $codebarre existe bien, sinon, erreur 404.
         if(!$produit)

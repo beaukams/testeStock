@@ -32,7 +32,7 @@ class ProduitType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gestion\EntiteBundle\Entity\Produit'
+            'data_class' => 'Gestion\StockBundle\Entity\Produit'
         ));
     }
 }
