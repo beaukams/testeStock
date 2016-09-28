@@ -21,3 +21,21 @@ gestion_stock_modifier_produit:
 gestion_stock_supprimer_produit:
     path:     /produit/supprimer/{codebarre}
     defaults: { _controller: GestionStockBundle:Produit:supprimer }
+    
+    
+    
+gestion_stockage_accueil:
+    path:     /accueil
+    defaults: { _controller: GestionStockBundle:Default:index }
+
+gestion_stockage_lister_stock:
+    path:     /stock/lister
+    defaults: { _controller: GestionStockBundle:Stock:lister }
+
+gestion_stockage_afficher_stock:
+    path:     /stock/afficher{id}
+    defaults: { _controller: GestionStockBundle:Stock:afficher }
+
+gestion_stockage_ajouter_stock:
+    path:     /stock/ajouter
+    defaults: { _controller: GestionStockBundle:Stock:ajouter }
