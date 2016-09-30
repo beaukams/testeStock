@@ -1,9 +1,6 @@
 <?php
-
 namespace Gestion\StockBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Categorie
  *
@@ -20,16 +17,12 @@ class Categorie
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=40, nullable=false)
      */
     private $libelle;
-
-
-
     /**
      * Set libelle
      *
@@ -40,10 +33,8 @@ class Categorie
     public function setLibelle($libelle)
     {
         $this->libelle = $libelle;
-
         return $this;
     }
-
     /**
      * Get libelle
      *
@@ -53,7 +44,6 @@ class Categorie
     {
         return $this->libelle;
     }
-
     /**
      * Get id
      *
@@ -63,4 +53,12 @@ class Categorie
     {
         return $this->id;
     }
+
+    public function getContent(){
+        return array(
+                "id" => $this->id,
+                "libelle" => $this->libelle,
+            );
+    }
+    
 }

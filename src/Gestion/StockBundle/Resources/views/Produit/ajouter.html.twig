@@ -68,14 +68,14 @@
 
 		<div class="form-group">
 		    {# Génération du label. #}
-		    {{ form_label(formulaire.categorie, "Categorie du produit", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		    {{ form_label(formulaire.cate, "Categorie du produit", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
 
 		    {# Affichage des erreurs pour ce champ précis. #}
-		    {{ form_errors(formulaire.categorie) }}
+		    {{ form_errors(formulaire.cate) }}
 
 		    <div class="col-sm-4">
 		        {# Génération de l'input. #}
-		        {{ form_widget(formulaire.categorie, {'attr': {'class': 'form-control'}}) }}
+		        {{ form_widget(formulaire.cate, {'attr': {'class': 'form-control'}}) }}
 		    </div>
 		</div>
 

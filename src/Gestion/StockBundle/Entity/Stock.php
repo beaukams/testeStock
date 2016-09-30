@@ -45,7 +45,7 @@ class Stock
      */
     private $produit;
 
-
+    public $produitTemp;
 
     /**
      * Set quantite
@@ -112,7 +112,7 @@ class Stock
      *
      * @return Stock
      */
-    public function setProduit(\Gestion\StockBundle\Entity\Produit $produit = null)
+    public function setProduit(\Gestion\StockBundle\Entity\Produit $produit)
     {
         $this->produit = $produit;
 
@@ -127,5 +127,15 @@ class Stock
     public function getProduit()
     {
         return $this->produit;
+    }
+
+    public function getContent(){
+        return  array(
+            'id' => $this->id,
+            'quantite' => $this->quantite,
+            'seuilMin' => $this->seuilmin,
+            'produit' => $this->produit->getLibelle()
+
+         );
     }
 }

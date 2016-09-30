@@ -57,9 +57,9 @@ class Produit
     private $reference;
 
     /**
-     * @var \Categorie
+     * @var Gestion\StockBundle\Entity\Categorie
      *
-     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\ManyToOne(targetEntity="Gestion\StockBundle\Entity\Categorie")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      * })
@@ -67,6 +67,10 @@ class Produit
     private $categorie;
 
 
+    /**  
+    * @var integer
+    */
+    public $cate;
 
     /**
      * Set libelle
@@ -205,7 +209,7 @@ class Produit
      *
      * @return Produit
      */
-    public function setCategorie(\Gestion\StockBundle\Entity\Categorie $categorie = null)
+    public function setCategorie(\Gestion\StockBundle\Entity\Categorie $categorie)
     {
         $this->categorie = $categorie;
 
@@ -221,4 +225,18 @@ class Produit
     {
         return $this->categorie;
     }
+
+    public function getContent(){
+        return array(
+                "id" => $this->id,
+                "libelle" => $this->libelle,
+                "reference" => $this->reference,
+                "codebarre" => $this->codebarre,
+                "prixunitaire" => $this->prixunitaire,
+                "dateperemption" => $this->dateperemption,
+                "categorie" => $this->categorie->getLibelle()
+            );
+    }
+
+    
 }

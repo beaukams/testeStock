@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+{%block tilte%}
+	{{ parent() }}
+{%endblock%}
+
+{% block body %}
+
+{{parent()}}
+
+	{{  $categorieName}}
+	
+{% endblock %}
