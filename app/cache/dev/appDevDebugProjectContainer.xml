@@ -2615,7 +2615,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57eddf76bbacf3.92887266</argument>
+            <argument>57ee6ef99cad71.71094878</argument>
           </service>
         </argument>
         <argument type="service">
@@ -2629,7 +2629,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57eddf76bbacf3.92887266</argument>
+            <argument>57ee6ef99cad71.71094878</argument>
           </service>
         </argument>
       </argument>
@@ -3038,7 +3038,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57eddf76bbacf3.92887266</argument>
+            <argument>57ee6ef99cad71.71094878</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3150,7 +3150,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57eddf76bbacf3.92887266</argument>
+            <argument>57ee6ef99cad71.71094878</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -5250,6 +5250,28 @@
               </argument>
             </argument>
           </argument>
+          <argument type="collection">
+            <argument key="fieldName">groups</argument>
+            <argument key="targetEntity">Application\Sonata\UserBundle\Entity\Group</argument>
+            <argument key="cascade" type="collection"/>
+            <argument key="joinTable" type="collection">
+              <argument key="name">fos_user_user_group</argument>
+              <argument key="joinColumns" type="collection">
+                <argument type="collection">
+                  <argument key="name">user_id</argument>
+                  <argument key="referencedColumnName">id</argument>
+                  <argument key="onDelete">CASCADE</argument>
+                </argument>
+              </argument>
+              <argument key="inverseJoinColumns" type="collection">
+                <argument type="collection">
+                  <argument key="name">group_id</argument>
+                  <argument key="referencedColumnName">id</argument>
+                  <argument key="onDelete">CASCADE</argument>
+                </argument>
+              </argument>
+            </argument>
+          </argument>
         </argument>
       </call>
     </service>
@@ -5744,20 +5766,56 @@
           <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
           <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
           <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
+          <argument>form.type_extension.form.http_foundation</argument>
+          <argument>form.type_extension.form.validator</argument>
+          <argument>form.type_extension.csrf</argument>
+          <argument>form.type_extension.form.data_collector</argument>
+          <argument>nelmio_api_doc.form.extension.description_form_type_extension</argument>
+          <argument>sonata.admin.form.extension.field</argument>
+          <argument>mopa_bootstrap.form.type_extension.help</argument>
+          <argument>mopa_bootstrap.form.type_extension.legend</argument>
+          <argument>mopa_bootstrap.form.type_extension.error</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget</argument>
+          <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
+          <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
+          <argument>form.type_extension.form.http_foundation</argument>
+          <argument>form.type_extension.form.validator</argument>
+          <argument>form.type_extension.csrf</argument>
+          <argument>form.type_extension.form.data_collector</argument>
+          <argument>nelmio_api_doc.form.extension.description_form_type_extension</argument>
+          <argument>sonata.admin.form.extension.field</argument>
+          <argument>mopa_bootstrap.form.type_extension.help</argument>
+          <argument>mopa_bootstrap.form.type_extension.legend</argument>
+          <argument>mopa_bootstrap.form.type_extension.error</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget</argument>
+          <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
+          <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
         </argument>
         <argument key="repeated" type="collection">
+          <argument>form.type_extension.repeated.validator</argument>
+          <argument>form.type_extension.repeated.validator</argument>
           <argument>form.type_extension.repeated.validator</argument>
         </argument>
         <argument key="submit" type="collection">
           <argument>form.type_extension.submit.validator</argument>
+          <argument>form.type_extension.submit.validator</argument>
+          <argument>form.type_extension.submit.validator</argument>
         </argument>
         <argument key="choice" type="collection">
+          <argument>sonata.admin.form.extension.choice</argument>
+          <argument>sonata.admin.form.extension.choice</argument>
           <argument>sonata.admin.form.extension.choice</argument>
         </argument>
         <argument key="button" type="collection">
           <argument>mopa_bootstrap.form.type_extension.button</argument>
+          <argument>mopa_bootstrap.form.type_extension.button</argument>
+          <argument>mopa_bootstrap.form.type_extension.button</argument>
         </argument>
         <argument key="date" type="collection">
+          <argument>mopa_bootstrap.form.type_extension.date</argument>
+          <argument>mopa_bootstrap.form.type_extension.date</argument>
           <argument>mopa_bootstrap.form.type_extension.date</argument>
         </argument>
       </argument>
