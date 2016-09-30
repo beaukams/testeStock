@@ -47,6 +47,73 @@ class StockController extends Controller
         return $this->render('GestionStockBundle:Stock:afficher.html.twig', array("Identifiant"  => $stock ));
     }
 
+	public function modifierAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $stock = $em->getRepository('GestionStockBundle:Stock')->findOneBy(array('Identifiant' => $id));
+        $stocks = $em->getRepository('GestionStockBundle:Stock')->findAll();
+         // On vérifie que le stock avec un identifiant existe bien, sinon, erreur 404.
+        if(!$stock)
+        {
+           throw $this->createNotFoundException('Stock[identifiant ='.$id.'] n\'existe pas');
+        }
+      
+        $form = $this->get('form.factory')->create(new StockType, $stock);
+               
+        if ($form->handleRequest($request)->isValid()) 
+        {
+            if ($form->get('Modifier')->isClicked())  
+            {
+              $em->persist($stock);
+              $em->flush();
+              return $this->redirect($this->generateUrl('gestion_stockage_afficher_stock', array('Identifiant' => $id)));
+            
+            }
+             if ($form->get('Annuler')->isClicked())  
+            {
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            }          
+            
+        }
+        return $this->render('GestionStockBundle:Stock:modifier.html.twig', array(
+                'Identifiant' => $id,
+                'formulaire' => $form->createView(), 
+                'Identifiant' => $stock));
+    }
+    //supprimer un stock
+    public function supprimerAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $produit = $em->getRepository('GestionStockBundle:Stock')->findOneBy(array('Identifiant' => $id));
+        $produits = $em->getRepository('GestionStockBundle:Stock')->findAll();
+         // On vérifie que le produit avec un identifiant existe bien, sinon, erreur 404.
+        if(!$stock)
+        {
+            throw $this->createNotFoundException('Stock[Identifiant='.$id.'] n\'existe pas');
+        }
+      
+       $form = $this->get('form.factory')->create(new StockType, $stock);
+               
+        if ($form->handleRequest($request)->isValid()) 
+        {
+            if ($form->get('Supprimer')->isClicked())  
+            {
+             $em->remove($stock);
+             $em->flush();
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            
+            }
+             if ($form->get('Annuler')->isClicked())  
+            {
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            }
+        }
+        return $this->render('GestionStockBundle:Stock:supprimer.html.twig', array(
+            'Identifiant' => $id,
+            'formulaire'=> $form->createView(),
+            'Identifiant' => $stock));
+    }
+
 
 
 }
