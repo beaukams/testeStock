@@ -16,20 +16,20 @@ class ProduitType extends AbstractType
      * @param array $options
      */
 
-    private $services;
+    // private $services;
 
-    public function __construct($services)
-    {
-        $this->services = $services;
-    }
+    // public function __construct($services)
+    // {
+    //     $this->services = $services;
+    // }
 
     
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        //recuperer la liste des categories
+        // //recuperer la liste des categories
 
-            $res = $this->services->getAllCategorie();
+        //     $res = $this->services->getAllCategorie();
 
         $builder
             ->add('libelle')
@@ -37,7 +37,7 @@ class ProduitType extends AbstractType
             ->add('prixunitaire')
             ->add('dateperemption')
             ->add('reference')
-            ->add('cate', 'choice', array('choices' => $res))  //new CategorieType())
+            ->add('categorie') //'choice', array('choices' => $res))  //new CategorieType())
             ->add('Ajouter', 'submit')
             ->add('Annuler', 'submit')
         ;

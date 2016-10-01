@@ -13,17 +13,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProduitController extends Controller
 {
- 	//Ajouter produit
- 	 public function ajouterAction(Request $request)
+ 	
+
+    //Ajouter produit
+    public function ajouterAction(Request $request)
+
     {
-		$entite_produit = new Produit();
-
-        $em = $this->getDoctrine()->getManager();
-
-        //creer le formType
-        $form_produit = new ProduitType($this);
-
-
+        $entite_produit = new Produit();
+        $form_produit = new ProduitType();
         $form = $this->get('form.factory')->create($form_produit, $entite_produit);
 
         if ($form->handleRequest($request)->isValid()) 
@@ -31,9 +28,7 @@ class ProduitController extends Controller
             if ($form->get('Ajouter')->isClicked())  
             {
 
-                //selectionner la categorie
-                $entite_produit->setCategorie($em->getRepository('GestionStockBundle:Categorie')->find($entite_produit->cate));
-
+                $em = $this->getDoctrine()->getManager();
                 $em->persist($entite_produit);
                 $em->flush();
                 return $this->redirect($this->generateUrl('gestion_stock_lister_produit'));
@@ -51,23 +46,19 @@ class ProduitController extends Controller
 
     //afficher produit
     public function afficherAction($code)
+
     {
         $em = $this->getDoctrine()->getManager();
-        $produit = $em->getRepository('GestionStockBundle:Produit')->find($code);
-        return $this->render('GestionStockBundle:Produit:afficher.html.twig', array("code"  => $produit->getContent() ));
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findOneBy( array('codebarre' => $code));
+        return $this->render('GestionStockBundle:Produit:afficher.html.twig', array("code"  => $produit ));
     }
 
     //lister produit
     public function listerAction()
     {
-    	$em = $this->getDoctrine()->getManager();
-        $produits = $em->getRepository('GestionStockBundle:Produit')->findAll();
-        $res = array();
-        foreach ($produits as $key => $produit) {
-            $res[$key] = $produit->getContent();
-        }
-
-        return $this->render('GestionStockBundle:Produit:lister.html.twig', array('produits' => $res));
+        $em = $this->getDoctrine()->getManager();
+        $produit = $em->getRepository('GestionStockBundle:Produit')->findAll();
+        return $this->render('GestionStockBundle:Produit:lister.html.twig', array('produits' => $produit));
     }
      
     //modifier produit
@@ -148,17 +139,18 @@ class ProduitController extends Controller
             'code' => $produit));
     }
 
-    public function getAllCategorie(){
-        $em = $this->getDoctrine()->getManager();
-        $categs = $em->getRepository('GestionStockBundle:Categorie')->findAll();
 
-        $res = array();
-        foreach ($categs as $key => $categ) {
-            $cc = $categ->getContent();
-            $res[$cc['id']] = $cc['libelle'];
-        }
+    // public function getAllCategorie(){
+    //     $em = $this->getDoctrine()->getManager();
+    //     $categs = $em->getRepository('GestionStockBundle:Categorie')->findAll();
 
-        return $res;
-    }
+    //     $res = array();
+    //     foreach ($categs as $key => $categ) {
+    //         $cc = $categ->getContent();
+    //         $res[$cc['id']] = $cc['libelle'];
+    //     }
+
+    //     return $res;
+    // }
 
 }

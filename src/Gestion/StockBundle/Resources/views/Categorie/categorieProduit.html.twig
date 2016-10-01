@@ -7,6 +7,8 @@
 
 {{parent()}}
 
-	{{  $categorieName}}
+	{% for tag in categorieName %}
+		{{  tag.libelle}}
+	{%endfor%}
 	
 {% endblock %}

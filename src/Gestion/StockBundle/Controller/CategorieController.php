@@ -134,11 +134,22 @@ public function modifierAction(Request $request,$id)
  				 ;	
 			var_dump($produit);
 			die();
+          // $produit = $this->getDoctrine()
+          //         ->getManager()
+          //         ->getRepository("GestionStockBundle:Produit")
+          //         ->findAll()
+          //     ;  
 
- 		 $categorieName = $produit->getCategorie()->getName();
+ 		 //$categorieName = $produit->getCategorie()->getName();
+            // $ProduitCategorie=array();
+
+            // if ($produit->getCategorie_id()==$id) 
+            // {
+            //     $ProduitCategorie[] = '$produit->getLibelle()';
+            // }
 
  		 return $this->render('GestionStockBundle:Categorie:categorieProduit.html.twig',array(
-					'categorieName' => $categorieName 		
+					'categorieName' => $categorieName //ProduitCategorie//		
 			));	 
 
 

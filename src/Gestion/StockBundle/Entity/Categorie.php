@@ -54,11 +54,18 @@ class Categorie
         return $this->id;
     }
 
-    public function getContent(){
-        return array(
-                "id" => $this->id,
-                "libelle" => $this->libelle,
-            );
+    public function __toString()
+    
+    {
+        return $this->getLibelle();
     }
+
+
+    // public function getContent(){
+    //     return array(
+    //             "id" => $this->id,
+    //             "libelle" => $this->libelle,
+    //         );
+    // }
     
 }
