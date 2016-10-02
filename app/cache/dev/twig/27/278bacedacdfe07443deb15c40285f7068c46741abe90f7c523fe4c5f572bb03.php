@@ -21,25 +21,25 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_891383147962fe2be1afc2967ab854e7d4799fba076db1c42b303a5f904337cd = $this->env->getExtension("native_profiler");
-        $__internal_891383147962fe2be1afc2967ab854e7d4799fba076db1c42b303a5f904337cd->enter($__internal_891383147962fe2be1afc2967ab854e7d4799fba076db1c42b303a5f904337cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GestionStockBundle:Stock:ajouter.html.twig"));
+        $__internal_8f423b6f54ad5ffb021997f71a3f0f8b629d6570883c1c8658da50ee27ba5c6c = $this->env->getExtension("native_profiler");
+        $__internal_8f423b6f54ad5ffb021997f71a3f0f8b629d6570883c1c8658da50ee27ba5c6c->enter($__internal_8f423b6f54ad5ffb021997f71a3f0f8b629d6570883c1c8658da50ee27ba5c6c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GestionStockBundle:Stock:ajouter.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_891383147962fe2be1afc2967ab854e7d4799fba076db1c42b303a5f904337cd->leave($__internal_891383147962fe2be1afc2967ab854e7d4799fba076db1c42b303a5f904337cd_prof);
+        $__internal_8f423b6f54ad5ffb021997f71a3f0f8b629d6570883c1c8658da50ee27ba5c6c->leave($__internal_8f423b6f54ad5ffb021997f71a3f0f8b629d6570883c1c8658da50ee27ba5c6c_prof);
 
     }
 
     // line 2
     public function block_contenu($context, array $blocks = array())
     {
-        $__internal_25ce4295039de7921a394f85148047fb1cf2aac61c066bf5fb17a2ab4f3a35e0 = $this->env->getExtension("native_profiler");
-        $__internal_25ce4295039de7921a394f85148047fb1cf2aac61c066bf5fb17a2ab4f3a35e0->enter($__internal_25ce4295039de7921a394f85148047fb1cf2aac61c066bf5fb17a2ab4f3a35e0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenu"));
+        $__internal_2326a3516fb8d501a301a8f126cf1f9950fb5eda9f90b84b446360c706c1e253 = $this->env->getExtension("native_profiler");
+        $__internal_2326a3516fb8d501a301a8f126cf1f9950fb5eda9f90b84b446360c706c1e253->enter($__internal_2326a3516fb8d501a301a8f126cf1f9950fb5eda9f90b84b446360c706c1e253_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 3
         echo "\t <br><br>
 \t <div class=\"well\">
-        <em><center><h2>Ajouter un nouveau produit pharmaceutique Dans Stock  </h2></center></em>
+        <em><center><h2>Ajouter un nouveau produit en Stock  </h2></center></em>
 \t\t";
         // line 6
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), 'form_start', array("attr" => array("class" => "form-horizontal")));
@@ -52,20 +52,20 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
 \t\t    ";
         // line 10
         echo "\t\t    ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produitTemp", array()), 'label', array("label_attr" => array("class" => "col-sm-4 control-label"), "label" => "Produit : "));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produit", array()), 'label', array("label_attr" => array("class" => "col-sm-4 control-label"), "label" => "Produit : "));
         echo "
 
 \t\t    ";
         // line 13
         echo "\t\t    ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produitTemp", array()), 'errors');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produit", array()), 'errors');
         echo "
 
 \t\t    <div class=\"col-sm-4\">
 \t\t        ";
         // line 17
         echo "\t\t        ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produitTemp", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "produit", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
 \t\t    </div>
 \t\t</div>
@@ -113,7 +113,7 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
         echo "
 \t\t    </div>
 \t\t</div>
-\t\t
+\t\t\t</br>
 
 \t\t";
         // line 49
@@ -121,9 +121,9 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "Ajouter", array()), 'widget', array("attr" => array("class" => "btn btn-primary")));
         echo "</span>
 
-        <span style=\"margin-left:30%\">";
+        <span style=\"margin-left:25%\">";
         // line 51
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "Annuler", array()), 'widget', array("attr" => array("class" => "btn btn-primary")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formulaire"]) ? $context["formulaire"] : $this->getContext($context, "formulaire")), "Annuler", array()), 'widget', array("attr" => array("class" => "btn btn-warning")));
         echo "</span>
 
 \t\t";
@@ -137,7 +137,7 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
 \t\t </div>
 \t";
         
-        $__internal_25ce4295039de7921a394f85148047fb1cf2aac61c066bf5fb17a2ab4f3a35e0->leave($__internal_25ce4295039de7921a394f85148047fb1cf2aac61c066bf5fb17a2ab4f3a35e0_prof);
+        $__internal_2326a3516fb8d501a301a8f126cf1f9950fb5eda9f90b84b446360c706c1e253->leave($__internal_2326a3516fb8d501a301a8f126cf1f9950fb5eda9f90b84b446360c706c1e253_prof);
 
     }
 
@@ -160,19 +160,19 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
 /* 	 {% block contenu %}*/
 /* 	 <br><br>*/
 /* 	 <div class="well">*/
-/*         <em><center><h2>Ajouter un nouveau produit pharmaceutique Dans Stock  </h2></center></em>*/
+/*         <em><center><h2>Ajouter un nouveau produit en Stock  </h2></center></em>*/
 /* 		{{ form_start(formulaire, {'attr': {'class': 'form-horizontal'}}) }}*/
 /* 		{{ form_errors(formulaire) }}*/
 /* 		<div class="form-group">*/
 /* 		    {# Génération du label. #}*/
-/* 		    {{ form_label(formulaire.produitTemp, "Produit : ", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}*/
+/* 		    {{ form_label(formulaire.produit, "Produit : ", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}*/
 /* */
 /* 		    {# Affichage des erreurs pour ce champ précis. #}*/
-/* 		    {{ form_errors(formulaire.produitTemp) }}*/
+/* 		    {{ form_errors(formulaire.produit) }}*/
 /* */
 /* 		    <div class="col-sm-4">*/
 /* 		        {# Génération de l'input. #}*/
-/* 		        {{ form_widget(formulaire.produitTemp, {'attr': {'class': 'form-control'}}) }}*/
+/* 		        {{ form_widget(formulaire.produit, {'attr': {'class': 'form-control'}}) }}*/
 /* 		    </div>*/
 /* 		</div>*/
 /* */
@@ -201,12 +201,12 @@ class __TwigTemplate_d1299b39ebfd8fe12090f1fcf95283dba965df6e8cdf47d5c231d140910
 /* 		        {{ form_widget(formulaire.seuilMin, {'attr': {'class': 'form-control'}}) }}*/
 /* 		    </div>*/
 /* 		</div>*/
-/* 		*/
+/* 			</br>*/
 /* */
 /* 		{# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}*/
 /*         <span style="margin-left:30%">{{ form_widget(formulaire.Ajouter, {'attr': {'class': 'btn btn-primary'}}) }}</span>*/
 /* */
-/*         <span style="margin-left:30%">{{ form_widget(formulaire.Annuler, {'attr': {'class': 'btn btn-primary'}}) }}</span>*/
+/*         <span style="margin-left:25%">{{ form_widget(formulaire.Annuler, {'attr': {'class': 'btn btn-warning'}}) }}</span>*/
 /* */
 /* 		{{ form_widget(formulaire) }}*/
 /* 		 {{ form_end(formulaire) }}	*/

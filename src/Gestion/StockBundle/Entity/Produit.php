@@ -226,6 +226,13 @@ class Produit
         return $this->categorie;
     }
 
+    public function __toString()
+    
+    {
+        return $this->getLibelle();
+    }
+
+
     public function getContent(){
         return array(
                 "id" => $this->id,

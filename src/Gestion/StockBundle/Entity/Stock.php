@@ -129,6 +129,7 @@ class Stock
         return $this->produit;
     }
 
+
     public function getContent(){
         return  array(
             'id' => $this->id,

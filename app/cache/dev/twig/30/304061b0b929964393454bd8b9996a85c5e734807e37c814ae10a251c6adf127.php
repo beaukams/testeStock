@@ -15,8 +15,8 @@ class __TwigTemplate_197efdfc08bfbcaaafe8829f718af5c0ec7b78eef290727c68bae318164
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ea404645c023882e273ddcdb7ecf9210ed1ca32b1799af48f1a4506295f177f1 = $this->env->getExtension("native_profiler");
-        $__internal_ea404645c023882e273ddcdb7ecf9210ed1ca32b1799af48f1a4506295f177f1->enter($__internal_ea404645c023882e273ddcdb7ecf9210ed1ca32b1799af48f1a4506295f177f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SonataBlock/Profiler/icon.svg"));
+        $__internal_031490fadd7e10e7788bb00300371870b2020c61fcba25e236c8c0deec313ee9 = $this->env->getExtension("native_profiler");
+        $__internal_031490fadd7e10e7788bb00300371870b2020c61fcba25e236c8c0deec313ee9->enter($__internal_031490fadd7e10e7788bb00300371870b2020c61fcba25e236c8c0deec313ee9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SonataBlock/Profiler/icon.svg"));
 
         // line 1
         echo "<svg height=\"24\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\">
@@ -24,7 +24,7 @@ class __TwigTemplate_197efdfc08bfbcaaafe8829f718af5c0ec7b78eef290727c68bae318164
 </svg>
 ";
         
-        $__internal_ea404645c023882e273ddcdb7ecf9210ed1ca32b1799af48f1a4506295f177f1->leave($__internal_ea404645c023882e273ddcdb7ecf9210ed1ca32b1799af48f1a4506295f177f1_prof);
+        $__internal_031490fadd7e10e7788bb00300371870b2020c61fcba25e236c8c0deec313ee9->leave($__internal_031490fadd7e10e7788bb00300371870b2020c61fcba25e236c8c0deec313ee9_prof);
 
     }
 

@@ -16,20 +16,20 @@ class __TwigTemplate_cec918ca43f6084556ad6eb0e7acc00452f8913c2c2e372ceaadaf444e3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9ddaa0139b027e24aecffee177dd85257d7b7117e9942b45131c748535f52ffd = $this->env->getExtension("native_profiler");
-        $__internal_9ddaa0139b027e24aecffee177dd85257d7b7117e9942b45131c748535f52ffd->enter($__internal_9ddaa0139b027e24aecffee177dd85257d7b7117e9942b45131c748535f52ffd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataUserBundle:Form:form_admin_fields.html.twig"));
+        $__internal_eceade1e8ec1fa06e7e5c1e66d1baacee43d9b918789ed01c6c87f5f974847c6 = $this->env->getExtension("native_profiler");
+        $__internal_eceade1e8ec1fa06e7e5c1e66d1baacee43d9b918789ed01c6c87f5f974847c6->enter($__internal_eceade1e8ec1fa06e7e5c1e66d1baacee43d9b918789ed01c6c87f5f974847c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataUserBundle:Form:form_admin_fields.html.twig"));
 
         // line 1
         $this->displayBlock('sonata_security_roles_widget', $context, $blocks);
         
-        $__internal_9ddaa0139b027e24aecffee177dd85257d7b7117e9942b45131c748535f52ffd->leave($__internal_9ddaa0139b027e24aecffee177dd85257d7b7117e9942b45131c748535f52ffd_prof);
+        $__internal_eceade1e8ec1fa06e7e5c1e66d1baacee43d9b918789ed01c6c87f5f974847c6->leave($__internal_eceade1e8ec1fa06e7e5c1e66d1baacee43d9b918789ed01c6c87f5f974847c6_prof);
 
     }
 
     public function block_sonata_security_roles_widget($context, array $blocks = array())
     {
-        $__internal_a164a792cb6bab68de0c16b95efb7c38572109deccb58489fd34b30d0decafda = $this->env->getExtension("native_profiler");
-        $__internal_a164a792cb6bab68de0c16b95efb7c38572109deccb58489fd34b30d0decafda->enter($__internal_a164a792cb6bab68de0c16b95efb7c38572109deccb58489fd34b30d0decafda_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sonata_security_roles_widget"));
+        $__internal_9737673d37c160d1d26f959681f7937d54696899a391683e8ca33130270627c6 = $this->env->getExtension("native_profiler");
+        $__internal_9737673d37c160d1d26f959681f7937d54696899a391683e8ca33130270627c6->enter($__internal_9737673d37c160d1d26f959681f7937d54696899a391683e8ca33130270627c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sonata_security_roles_widget"));
 
         // line 2
         ob_start();
@@ -75,7 +75,7 @@ class __TwigTemplate_cec918ca43f6084556ad6eb0e7acc00452f8913c2c2e372ceaadaf444e3
         }
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
         
-        $__internal_a164a792cb6bab68de0c16b95efb7c38572109deccb58489fd34b30d0decafda->leave($__internal_a164a792cb6bab68de0c16b95efb7c38572109deccb58489fd34b30d0decafda_prof);
+        $__internal_9737673d37c160d1d26f959681f7937d54696899a391683e8ca33130270627c6->leave($__internal_9737673d37c160d1d26f959681f7937d54696899a391683e8ca33130270627c6_prof);
 
     }
 

@@ -2,7 +2,7 @@
 	 {% block contenu %}
 	 <br><br>
 	 <div class="well">
-        <em><center><h2>Modifier le Stock {{code.id}} </h2></center></em>
+        <center><h2>Modifier le Stock de <em>{{code.produit}} </h2></center></em>
         </br>
 		{{ form_start(formulaire, {'attr': {'class': 'form-horizontal'}}) }}
 		{{ form_errors(formulaire) }}
@@ -21,14 +21,14 @@
 
 		<div class="form-group">
 		    {# Génération du label. #}
-		    {{ form_label(formulaire.seuilmin, "Seuil Minimum", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		    {{ form_label(formulaire.seuilMin, "Seuil Minimum", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
 
 		    {# Affichage des erreurs pour ce champ précis. #}
-		    {{ form_errors(formulaire.seuilmin) }}
+		    {{ form_errors(formulaire.seuilMin) }}
 
 		    <div class="col-sm-4">
 		        {# Génération de l'input. #}
-		        {{ form_widget(formulaire.seuilmin, {'attr': {'class': 'form-control'}}) }}
+		        {{ form_widget(formulaire.seuilMin, {'attr': {'class': 'form-control'}}) }}
 		    </div>
 		</div>
 
@@ -46,7 +46,7 @@
 		</div>
 	
 	   </br>
-        <span style="margin-left:30%">{{ form_widget(formulaire.Modifier, {'label': 'Modifier', 'attr': {'class': 'btn btn-primary'}}) }}</span>
+        <span style="margin-left:30%">{{ form_widget(formulaire.Ajouter, {'label': 'Modifier', 'attr': {'class': 'btn btn-primary'}}) }}</span>
 
          <span style="margin-left:25%">{{ form_widget(formulaire.Annuler, {'label': 'Annuler', 'attr': {'class': 'btn btn-warning'}}) }}</span>
 

@@ -27,7 +27,7 @@ gestion_stockage_lister_stock:
     defaults: { _controller: GestionStockBundle:Stock:lister }
 
 gestion_stockage_afficher_stock:
-    path:     /stock/afficher/{Identifiant}
+    path:     /stock/afficher/{id}
     defaults: { _controller: GestionStockBundle:Stock:afficher }
 
 gestion_stockage_ajouter_stock:
@@ -35,12 +35,12 @@ gestion_stockage_ajouter_stock:
     defaults: { _controller: GestionStockBundle:Stock:ajouter }
 
 gestion_stockage_modifier_stock:
-    path:     /stock/modifier
+    path:     /stock/modifier/{id}
     defaults: { _controller: GestionStockBundle:Stock:modifier }
 
 gestion_stockage_supprimer_stock:
-    path:     /stock/supprimer
-    defaults: { _controller: GestionStockBundle:Stock:suprimer }
+    path:     /stock/supprimer/{id}
+    defaults: { _controller: GestionStockBundle:Stock:supprimer }
 
 
 gestion_stock_categorie_ajouter:

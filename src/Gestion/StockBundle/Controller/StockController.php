@@ -32,8 +32,8 @@ class StockController extends Controller
             if ($form->get('Ajouter')->isClicked())  
             {
 
-                //selectionner la produit
-                $entite_stock->setProduit($em->getRepository('GestionStockBundle:Produit')->find($entite_stock->produitTemp)); //Ce qui reste: il faut verifier que le ce stock existe, sinon le creer
+                //selectionner le produit
+               // $entite_stock->setProduit($em->getRepository('GestionStockBundle:Produit')->find($entite_stock->produits)); //Ce qui reste: il faut verifier que le ce stock existe, sinon le creer
 
                 $em->persist($entite_stock);
                 $em->flush();
@@ -65,11 +65,11 @@ class StockController extends Controller
         return $this->render('GestionStockBundle:Stock:lister.html.twig', array('stocks' => $res));
     }
 
-     public function afficherAction($Identifiant)
+     public function afficherAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $stock = $em->getRepository('GestionStockBundle:Stock')->find($Identifiant);
-        return $this->render('GestionStockBundle:Stock:afficher.html.twig', array("stock"  => $stock->getContent() ));
+        $stock = $em->getRepository('GestionStockBundle:Stock')->findOneby(array ('id' => $id));
+        return $this->render('GestionStockBundle:Stock:afficher.html.twig', array("stock"  => $stock));
     }
 
 
@@ -87,5 +87,86 @@ class StockController extends Controller
 
         return $res;
     }
+
+
+     //modifier stock
+    public function modifierAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $stock = $em->getRepository('GestionStockBundle:Stock')->findOneBy(array('id' => $id));
+        $stocks = $em->getRepository('GestionStockBundle:Stock')->findAll();
+
+    
+        if(!$stock)
+        {
+           throw $this->createNotFoundException('Produit inexistant');
+        }
+      
+        $form = $this->get('form.factory')->create(new StockType, $stock);
+               
+        if ($form->handleRequest($request)->isValid()) 
+        {
+
+            if ($form->get('Ajouter')->isClicked())  
+            {
+              $em->persist($stock);
+              $em->flush();
+              return $this->redirect($this->generateUrl('gestion_stockage_afficher_stock', array('id' => $id)));
+            
+            }
+
+             if ($form->get('Annuler')->isClicked())  
+            {
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            }          
+            
+        }
+
+        return $this->render('GestionStockBundle:Stock:modifier.html.twig', array(
+                'id' => $id,
+                'formulaire' => $form->createView(), 
+                'code' => $stock));
+    }
+
+
+        //supprimer produit
+    public function supprimerAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $stock = $em->getRepository('GestionStockBundle:Stock')->findOneBy(array('id' => $id));
+        $stocks = $em->getRepository('GestionStockBundle:Stock')->findAll();
+
+         // On vérifie que le produit avc un $id existe bien, sinon, erreur 404.
+        if(!$stock)
+        {
+            throw $this->createNotFoundException('Stock inexistant');
+        }
+      
+       $form = $this->get('form.factory')->create(new StockType, $stock);
+               
+        if ($form->handleRequest($request)->isValid()) 
+        {
+            if ($form->get('Ajouter')->isClicked())  
+            {
+             $em->remove($stock);
+             $em->flush();
+
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            
+            }
+
+             if ($form->get('Annuler')->isClicked())  
+            {
+                 return $this->redirect($this->generateUrl('gestion_stockage_lister_stock',array('stocks' => $stocks)));
+            }
+
+        }
+
+        return $this->render('GestionStockBundle:Stock:supprimer.html.twig', array(
+            'id' => $id,
+            'formulaire'=> $form->createView(),
+            'code' => $stock));
+    }
+
 
 }

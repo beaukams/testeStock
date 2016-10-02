@@ -5,12 +5,12 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 class StockType extends AbstractType
 {
-     private $services;
+    //  private $services;
 
-    public function __construct($services)
-    {
-        $this->services = $services;
-    }
+    // public function __construct($services)
+    // {
+    //     $this->services = $services;
+    // }
 
     /**
      * @param FormBuilderInterface $builder
@@ -18,13 +18,13 @@ class StockType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        //recuperer la liste des produits
-        $res = $this->services->getAllProduit();
+        // //recuperer la liste des produits
+        // $res = $this->services->getAllProduit();
 
         $builder
             ->add('quantite')
             ->add('seuilMin')
-            ->add('produitTemp', 'choice', array('choices' => $res))
+            ->add('produit')//add('produitTemp', 'choice', array('choices' => $res))
             ->add('Ajouter', 'submit')
             ->add('Annuler', 'submit')
         ;

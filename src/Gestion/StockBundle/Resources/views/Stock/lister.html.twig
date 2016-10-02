@@ -1,4 +1,4 @@
-{% extends "GestionStockBundle::template.html.twig" %}
+    {% extends "GestionStockBundle::template.html.twig" %}
 {% block contenu %}
 	 <div class="col-md-12" >
         <div class="table-responsive">
@@ -17,7 +17,11 @@
                             <td>{{ tag.quantite }}</td>
                             <td>{{ tag.produit }}</td>
 
-                            <td><a href="{{ path('gestion_stockage_afficher_stock', {'Identifiant': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-list"></span></button></a></td>
+                            <td>
+                            <a href="{{ path('gestion_stockage_afficher_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-list"></span></button></a>
+                            <a href="{{ path('gestion_stockage_modifier_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span></button></a>
+                            <a href="{{ path('gestion_stockage_supprimer_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

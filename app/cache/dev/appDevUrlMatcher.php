@@ -149,7 +149,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             if (0 === strpos($pathinfo, '/stock/a')) {
                 // gestion_stockage_afficher_stock
-                if (0 === strpos($pathinfo, '/stock/afficher') && preg_match('#^/stock/afficher/(?P<Identifiant>[^/]++)$#s', $pathinfo, $matches)) {
+                if (0 === strpos($pathinfo, '/stock/afficher') && preg_match('#^/stock/afficher/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'gestion_stockage_afficher_stock')), array (  '_controller' => 'Gestion\\StockBundle\\Controller\\StockController::afficherAction',));
                 }
 
@@ -161,13 +161,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // gestion_stockage_modifier_stock
-            if ($pathinfo === '/stock/modifier') {
-                return array (  '_controller' => 'Gestion\\StockBundle\\Controller\\StockController::modifierAction',  '_route' => 'gestion_stockage_modifier_stock',);
+            if (0 === strpos($pathinfo, '/stock/modifier') && preg_match('#^/stock/modifier/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'gestion_stockage_modifier_stock')), array (  '_controller' => 'Gestion\\StockBundle\\Controller\\StockController::modifierAction',));
             }
 
             // gestion_stockage_supprimer_stock
-            if ($pathinfo === '/stock/supprimer') {
-                return array (  '_controller' => 'Gestion\\StockBundle\\Controller\\StockController::suprimerAction',  '_route' => 'gestion_stockage_supprimer_stock',);
+            if (0 === strpos($pathinfo, '/stock/supprimer') && preg_match('#^/stock/supprimer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'gestion_stockage_supprimer_stock')), array (  '_controller' => 'Gestion\\StockBundle\\Controller\\StockController::supprimerAction',));
             }
 
         }

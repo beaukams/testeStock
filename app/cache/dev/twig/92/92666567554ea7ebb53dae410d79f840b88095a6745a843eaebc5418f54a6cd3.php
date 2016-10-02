@@ -21,20 +21,20 @@ class __TwigTemplate_4973aedf9971418f856525c720a414eaf7d0caf5c679c456f67a6aab0d2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_10d26077ff98eb270bc5184aaa78b12af9df52555212b349cd121542c6d0a339 = $this->env->getExtension("native_profiler");
-        $__internal_10d26077ff98eb270bc5184aaa78b12af9df52555212b349cd121542c6d0a339->enter($__internal_10d26077ff98eb270bc5184aaa78b12af9df52555212b349cd121542c6d0a339_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GestionStockBundle:Stock:lister.html.twig"));
+        $__internal_0dbbe92a9c66d41fea04a242f9cb64fcc72659327635032ddeb4e603ae6f6683 = $this->env->getExtension("native_profiler");
+        $__internal_0dbbe92a9c66d41fea04a242f9cb64fcc72659327635032ddeb4e603ae6f6683->enter($__internal_0dbbe92a9c66d41fea04a242f9cb64fcc72659327635032ddeb4e603ae6f6683_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GestionStockBundle:Stock:lister.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_10d26077ff98eb270bc5184aaa78b12af9df52555212b349cd121542c6d0a339->leave($__internal_10d26077ff98eb270bc5184aaa78b12af9df52555212b349cd121542c6d0a339_prof);
+        $__internal_0dbbe92a9c66d41fea04a242f9cb64fcc72659327635032ddeb4e603ae6f6683->leave($__internal_0dbbe92a9c66d41fea04a242f9cb64fcc72659327635032ddeb4e603ae6f6683_prof);
 
     }
 
     // line 2
     public function block_contenu($context, array $blocks = array())
     {
-        $__internal_12a8fe2bde82f22c66314f91c43ce0c77e3213d270718f98c076776290c7492c = $this->env->getExtension("native_profiler");
-        $__internal_12a8fe2bde82f22c66314f91c43ce0c77e3213d270718f98c076776290c7492c->enter($__internal_12a8fe2bde82f22c66314f91c43ce0c77e3213d270718f98c076776290c7492c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenu"));
+        $__internal_023c2f1003b218086eaefb0a5be66ac41eb114257f7c3afa165c98f385a88d73 = $this->env->getExtension("native_profiler");
+        $__internal_023c2f1003b218086eaefb0a5be66ac41eb114257f7c3afa165c98f385a88d73->enter($__internal_023c2f1003b218086eaefb0a5be66ac41eb114257f7c3afa165c98f385a88d73_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 3
         echo "\t <div class=\"col-md-12\" >
@@ -68,23 +68,33 @@ class __TwigTemplate_4973aedf9971418f856525c720a414eaf7d0caf5c679c456f67a6aab0d2
             echo twig_escape_filter($this->env, $this->getAttribute($context["tag"], "produit", array()), "html", null, true);
             echo "</td>
 
-                            <td><a href=\"";
-            // line 20
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gestion_stockage_afficher_stock", array("Identifiant" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
-            echo "\"><button class=\"btn btn-info btn-xs\"><span class=\"glyphicon glyphicon-list\"></span></button></a></td>
+                            <td>
+                            <a href=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gestion_stockage_afficher_stock", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\"><button class=\"btn btn-info btn-xs\"><span class=\"glyphicon glyphicon-list\"></span></button></a>
+                            <a href=\"";
+            // line 22
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gestion_stockage_modifier_stock", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\"><button class=\"btn btn-info btn-xs\"><span class=\"glyphicon glyphicon-edit\"></span></button></a>
+                            <a href=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("gestion_stockage_supprimer_stock", array("id" => $this->getAttribute($context["tag"], "id", array()))), "html", null, true);
+            echo "\"><button class=\"btn btn-info btn-xs\"><span class=\"glyphicon glyphicon-trash\"></span></button></a>
+                            </td>
                         </tr>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 27
         echo "                </tbody>
             </table>
         </div>
 ";
         
-        $__internal_12a8fe2bde82f22c66314f91c43ce0c77e3213d270718f98c076776290c7492c->leave($__internal_12a8fe2bde82f22c66314f91c43ce0c77e3213d270718f98c076776290c7492c_prof);
+        $__internal_023c2f1003b218086eaefb0a5be66ac41eb114257f7c3afa165c98f385a88d73->leave($__internal_023c2f1003b218086eaefb0a5be66ac41eb114257f7c3afa165c98f385a88d73_prof);
 
     }
 
@@ -100,10 +110,10 @@ class __TwigTemplate_4973aedf9971418f856525c720a414eaf7d0caf5c679c456f67a6aab0d2
 
     public function getDebugInfo()
     {
-        return array (  82 => 23,  73 => 20,  68 => 18,  64 => 17,  60 => 16,  57 => 15,  53 => 14,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  92 => 27,  82 => 23,  78 => 22,  74 => 21,  68 => 18,  64 => 17,  60 => 16,  57 => 15,  53 => 14,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
-/* {% extends "GestionStockBundle::template.html.twig" %}*/
+/*     {% extends "GestionStockBundle::template.html.twig" %}*/
 /* {% block contenu %}*/
 /* 	 <div class="col-md-12" >*/
 /*         <div class="table-responsive">*/
@@ -122,7 +132,11 @@ class __TwigTemplate_4973aedf9971418f856525c720a414eaf7d0caf5c679c456f67a6aab0d2
 /*                             <td>{{ tag.quantite }}</td>*/
 /*                             <td>{{ tag.produit }}</td>*/
 /* */
-/*                             <td><a href="{{ path('gestion_stockage_afficher_stock', {'Identifiant': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-list"></span></button></a></td>*/
+/*                             <td>*/
+/*                             <a href="{{ path('gestion_stockage_afficher_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-list"></span></button></a>*/
+/*                             <a href="{{ path('gestion_stockage_modifier_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span></button></a>*/
+/*                             <a href="{{ path('gestion_stockage_supprimer_stock', {'id': tag.id }) }}"><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a>*/
+/*                             </td>*/
 /*                         </tr>*/
 /*                     {% endfor %}*/
 /*                 </tbody>*/
