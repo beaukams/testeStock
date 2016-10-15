@@ -21,6 +21,7 @@ gestion_stock_modifier_produit:
 gestion_stock_supprimer_produit:
     path:     /produit/supprimer/{codebarre}
     defaults: { _controller: GestionStockBundle:Produit:supprimer }
+
     
 gestion_stockage_lister_stock:
     path:     /stock/lister
@@ -62,3 +63,12 @@ gestion_stock_categorie_supprimer:
 gestion_stock_categorie_produit:
     path:       /categorie/produit/{id}
     defaults:   {_controller: GestionStockBundle:Categorie:produitCategorie}
+
+
+gestion_stock_dynamique_ajouter:
+    path:   /dynamique/ajouter/{table}
+    defaults: { _controller: GestionStockBundle:Dynamique:ajouter }
+
+gestion_stock_dynamique_ajouter_produit:
+    path:   /dynamique/produit/ajouter
+    defaults: { _controller: GestionStockBundle:Dynamique:ajouterProduit }

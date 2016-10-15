@@ -1,0 +1,47 @@
+{% extends "GestionStockBundle::template.html.twig" %}
+	 {% block contenu %}
+	 <br><br>
+	 <div class="well">
+        <em><center><h2>Ajouter un nouveau attribut d'un produit </h2></center></em>
+		{{ form_start(formulaire, {'attr': {'class': 'form-horizontal'}}) }}
+		{{ form_errors(formulaire) }}
+		<div class="form-group">
+		    {# Génération du label. #}
+		    {{ form_label(formulaire.nom, "Libellé", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+
+		    {# Affichage des erreurs pour ce champ précis. #}
+		    {{ form_errors(formulaire.nom) }}
+
+		    <div class="col-sm-4">
+		        {# Génération de l'input. #}
+		        {{ form_widget(formulaire.nom, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    {{ form_label(formulaire.typechamp, "Type", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		    {{ form_errors(formulaire.typechamp) }}
+
+		    <div class="col-sm-4">
+		        {{ form_widget(formulaire.typechamp, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    {{ form_label(formulaire.contraintes, "contraintes", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+		    {{ form_errors(formulaire.contraintes) }}
+
+		    <div class="col-sm-4">
+		        {{ form_widget(formulaire.contraintes, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		</div>
+
+
+        <span style="margin-left:30%">{{ form_widget(formulaire.Ajouter, {'attr': {'class': 'btn btn-success'}}) }}</span>
+
+         <span style="margin-left:25%">{{ form_widget(formulaire.Annuler, {'label': 'Annuler', 'attr': {'class': 'btn btn-warning'}}) }}</span>
+
+		{{ form_widget(formulaire) }}
+		 {{ form_end(formulaire) }}	
+		 </div>
+	{%endblock%}

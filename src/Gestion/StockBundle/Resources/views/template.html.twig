@@ -37,6 +37,29 @@
         <link rel="stylesheet" type="text/css" href = "{{ app.request.schemeAndHttpHost ~ asset('bundles/gestionstock/bower_components/bootstrap/dist/css/jquery.dataTables.min.css') }}"/>
          <link rel="stylesheet" type="text/css" href = "{{ app.request.schemeAndHttpHost ~  asset('bundles/gestionstock/css/sb-admin-2.css') }}"/>
         <link rel="stylesheet" type="text/css" href = "{{ app.request.schemeAndHttpHost ~ asset('bundles/gestionstock/css/font-awesome.min.css') }}"/>
+
+        <script type="text/javascript">
+    $(document).ready(function() {
+        var $container = $('#produit_champsproduit');
+
+        function add_category() {
+            index = $container.children().length;
+            $container.append($($container.attr('data-prototype').replace(/__name__/g, index)));
+          //  $container.append($('<a href="#" id="delete_category_' + index +'" class="btn btn-danger">Supprimer</a><br /><br />'));
+
+            $('#delete_category_' + index).click(function() {
+                $(this).prev().remove();
+                $(this).remove();
+            return false;
+            });
+        }
+
+        if($container.children().length == 0) {
+            add_category();
+        }
+
+    });
+</script>
     </head>
     <body id="coprsTemplate" onload="date_heure('heure');" >
         <div >
@@ -48,7 +71,7 @@
                 {% endblock %}
                 {% block corps %}
                     {% block menuHaut %}
-                        <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: #83b719; color: white">
+                        <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: #83b719; color: white;">
                             <div class="container-fluid">
                                 <div class="navbar-header">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

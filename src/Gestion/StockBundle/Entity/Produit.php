@@ -4,6 +4,8 @@ namespace Gestion\StockBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Produit
  *
@@ -67,10 +69,15 @@ class Produit
     private $categorie;
 
 
-    /**  
-    * @var integer
-    */
-    public $cate;
+    /**
+    * @var ArrayCollection $champsproduit
+     * @ORM\OneToMany(targetEntity="Gestion\StockBundle\Entity\Champproduit", mappedBy="idEntite", cascade={"persist", "remove", "merge"})
+     */
+    public $champsproduit;
+
+    public function __construct() {
+        $this->champsproduit = new ArrayCollection();
+    }
 
     /**
      * Set libelle
@@ -226,11 +233,26 @@ class Produit
         return $this->categorie;
     }
 
+
+    public function setChampsproduit($champsproduit)
+    {
+        $this->champsproduit = $champsproduit;
+
+        return $this;
+    }
+
+    public function getChampsproduit()
+    {
+        return $this->champsproduit;
+    }
+
+
     public function __toString()
     
     {
         return $this->getLibelle();
     }
+
 
 
     public function getContent(){
@@ -244,6 +266,23 @@ class Produit
                 "categorie" => $this->categorie->getLibelle()
             );
     }
+
+    public function addChampproduit(\Gestion\StockBundle\Entity\Champproduit $champproduit){
+        
+        // Si l'objet fait déjà partie de la collection on ne l'ajoute pas
+        if (!$this->champsproduit->contains($champproduit)) {
+            $this->champsproduit->add($champproduit);
+        }
+
+        $champproduit->setIdEntite($this);        
+        return $this;
+    }
+    public function removeChampproduit(\Gestion\StockBundle\Entity\Champproduit $champproduit)
+    {
+        $this->champsproduit->removeElement($champproduit);
+    }
+
+
 
     
 }

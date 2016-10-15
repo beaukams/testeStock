@@ -1,0 +1,28 @@
+{% extends "GestionStockBundle::template.html.twig" %}
+	 {% block contenu %}
+	 <br><br>
+	 <div class="well">
+        <em><center><h2>Ajouter un nouveau un produit </h2></center></em>
+		{{ form_start(formulaire, {'attr': {'class': 'form-horizontal'}}) }}
+		{{ form_errors(formulaire) }}
+		<div class="form-group">
+		    {# Génération du label. #}
+		    {{ form_label(formulaire.valeur, valeur, {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+
+		    {# Affichage des erreurs pour ce champ précis. #}
+		    {{ form_errors(formulaire.valeur) }}
+
+		    <div class="col-sm-4">
+		        {# Génération de l'input. #}
+		        {{ form_widget(formulaire.valeur, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		</div>
+
+        <span style="margin-left:30%">{{ form_widget(formulaire.Ajouter, {'attr': {'class': 'btn btn-success'}}) }}</span>
+
+         <span style="margin-left:25%">{{ form_widget(formulaire.Annuler, {'label': 'Annuler', 'attr': {'class': 'btn btn-warning'}}) }}</span>
+
+		{{ form_widget(formulaire) }}
+		 {{ form_end(formulaire) }}	
+		 </div>
+	{%endblock%}

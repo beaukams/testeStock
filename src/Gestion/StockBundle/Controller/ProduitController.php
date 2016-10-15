@@ -13,18 +13,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProduitController extends Controller
 {
- 	
+    
 
     //Ajouter produit
-    public function ajouterAction(Request $request)
+    public function ajouterAction(Request $request){
 
-    {
         $entite_produit = new Produit();
-        $form_produit = new ProduitType();
+        $form_produit = new ProduitType($this->listeChamps());
         $form = $this->get('form.factory')->create($form_produit, $entite_produit);
 
-        if ($form->handleRequest($request)->isValid()) 
-        {
+        if ($form->handleRequest($request)->isValid()) {
+
             if ($form->get('Ajouter')->isClicked())  
             {
 
@@ -33,13 +32,11 @@ class ProduitController extends Controller
                 $em->flush();
                 return $this->redirect($this->generateUrl('gestion_stock_lister_produit'));
             }
-
         }
 
-        if ($form->get('Annuler')->isClicked())  
-            {
+        if ($form->get('Annuler')->isClicked()) {
                  return $this->redirect($this->generateUrl('gestion_stock_lister_produit'));
-            }
+        }
 
         return $this->render('GestionStockBundle:Produit:ajouter.html.twig',array('formulaire' => $form->createView()));
     }
@@ -152,5 +149,13 @@ class ProduitController extends Controller
 
     //     return $res;
     // }
+
+    public function listeChamps()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $champs = $em->getRepository('GestionStockBundle:Champdynamique')->findAll();
+        
+        return $champs;    
+    }
 
 }
